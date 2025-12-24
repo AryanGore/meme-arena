@@ -1,16 +1,48 @@
-# React + Vite
+# Meme Arena 🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meme Arena is a fun, interactive React game where users vote on meme templates in head-to-head battles. Two memes appear each round, and the user selects the funnier one. After a fixed number of rounds, a leaderboard displays which memes performed the best.
 
-Currently, two official plugins are available:
+This project focuses on real-world React concepts, clean component design, and state management without using a backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Random meme battles (two memes per round)
+- Vote tracking for each meme
+- Fixed number of rounds per game
+- Leaderboard showing top-voted memes
+- Welcome screen with game instructions
+- Play again / reset functionality
+- Responsive, game-style UI
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- React (Functional Components)
+- React Hooks (`useState`, `useEffect`)
+- CSS (component-based styling)
+- Public Meme API (Imgflip)
+
+
+
+## How the Game Works
+
+1. The app fetches meme templates on initial load.
+2. Two random memes are shown each round.
+3. Clicking a meme gives it one vote.
+4. The game runs for 15 rounds.
+5. After the final round, a leaderboard shows the top memes.
+6. The user can restart the game from the beginning.
+
+
+## Key React Concepts Used
+
+- Lifting state up
+- Controlled side effects with `useEffect`
+- Conditional rendering
+- Derived state (leaderboard sorting)
+- Component composition
+- Event handling
+- Immutable state updates
+
+Deployed Project , Try Here : 
