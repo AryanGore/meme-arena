@@ -1,0 +1,115 @@
+/* Main battle screen */
+.battle {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7fd7ff, #b3ecff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Meme card */
+.meme-card {
+    background: #ffffff;
+    border: 4px solid #0a2540;
+    border-radius: 24px;
+    box-shadow: 0 16px 0 #0a2540;
+    width: 340px;
+    max-width: 90%;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    animation: cardWobble 3s ease-in-out infinite;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.meme-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 22px 0 #0a2540;
+}
+
+.meme-card:active {
+    transform: translateY(6px);
+    box-shadow: 0 10px 0 #0a2540;
+}
+
+/* Meme image wrapper */
+.meme-image {
+    width: 100%;
+    height: 260px;
+    object-fit: contain; /* IMPORTANT: prevents cropping */
+    border-radius: 16px;
+    background: #eef9ff;
+    padding: 0.5rem;
+}
+
+/* Meme name */
+.meme-name {
+    margin-top: 0.7rem;
+    font-weight: 600;
+    color: #0a2540;
+    font-size: 1rem;
+}
+
+/* Loading screen */
+.battle-loading {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7fd7ff, #b3ecff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.battle-loading-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffd500;
+    text-shadow: 2px 2px 0 #0a2540;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes cardWobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(0.7deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-0.7deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .battle {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .meme-card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .meme-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .meme-image {
+        height: 200px;
+    }
+
+    .meme-name {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,152 @@
+/* Leaderboard container */
+.leaderboard {
+    width: 100%;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+.leaderboard-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffd500;
+    text-shadow: 3px 3px 0 #0a2540;
+    margin-bottom: 2rem;
+}
+
+/* =========================
+   PODIUM (TOP 3)
+========================= */
+
+.leaderboard-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Wrapper logic via nth-child */
+.leaderboard-item {
+    background: #ffffff;
+    border: 3px solid #0a2540;
+    border-radius: 18px;
+    box-shadow: 0 10px 0 #0a2540;
+    width: 100%;
+    max-width: 480px;
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: popIn 0.4s ease-out;
+}
+
+/* =========================
+   TOP 3 STAGE STYLE
+========================= */
+
+.leaderboard-item:nth-child(-n + 3) {
+    width: 280px;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 0.8rem;
+}
+
+/* First place */
+.leaderboard-item:nth-child(1) {
+    background: #ffd500;
+    transform: translateY(-20px);
+    box-shadow: 0 16px 0 #0a2540;
+}
+
+/* Second place */
+.leaderboard-item:nth-child(2) {
+    background: #eaf7ff;
+    transform: translateY(-8px);
+}
+
+/* Third place */
+.leaderboard-item:nth-child(3) {
+    background: #eaf7ff;
+    transform: translateY(0);
+}
+
+/* =========================
+   TEXT STYLES
+========================= */
+
+.leaderboard-rank {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #0a2540;
+}
+
+.leaderboard-item:nth-child(1) .leaderboard-rank {
+    font-size: 2rem;
+}
+
+.leaderboard-name {
+    font-weight: 700;
+    color: #0a2540;
+    text-align: center;
+}
+
+.leaderboard-votes {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+/* =========================
+   REST (4–5)
+========================= */
+
+.leaderboard-item:nth-child(n + 4) {
+    flex-direction: row;
+    gap: 1rem;
+    background: #ffffff;
+}
+
+/* =========================
+   PODIUM BASE
+========================= */
+
+.leaderboard::after {
+    content: "";
+    display: block;
+    margin: 2rem auto 0;
+    width: 320px;
+    height: 14px;
+    background: #0a2540;
+    border-radius: 10px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes popIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+    .leaderboard-item:nth-child(-n + 3) {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .leaderboard-title {
+        font-size: 1.6rem;
+    }
+}
